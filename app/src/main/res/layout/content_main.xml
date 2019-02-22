@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_timer"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:text="Set Timer"
+            android:textAllCaps="false" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_calender"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_timer"
+            android:layout_alignLeft="@+id/btn_timer"
+            android:layout_alignRight="@+id/btn_timer"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:text="Set Event"
+            android:textAllCaps="false" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_video"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_calender"
+            android:layout_alignLeft="@+id/btn_calender"
+            android:layout_alignRight="@+id/btn_calender"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:text="Capture Video"
+            android:textAllCaps="false" />
+
+        <VideoView
+            android:id="@+id/vv"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@+id/btn_video"
+            android:layout_margin="@dimen/margin_large" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_contact"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vv"
+            android:layout_alignLeft="@+id/btn_calender"
+            android:layout_alignRight="@+id/btn_calender"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:text="Pick Contact"
+            android:textAllCaps="false" />
+
+        <ImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btn_contact"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:scaleType="centerCrop" />
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/iv_profile"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:text="Contact Name : "
+            android:textColor="#000000"
+            android:textSize="@dimen/text_regular" />
+
+        <TextView
+            android:id="@+id/tv_name2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/tv_name"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_toRightOf="@+id/tv_name"
+            android:textColor="#000000"
+            android:textSize="@dimen/text_regular"
+            tools:text="PTH" />
+
+        <TextView
+            android:id="@+id/tv_ph"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:text="Contact Phone : "
+            android:textColor="#000000"
+            android:textSize="@dimen/text_regular" />
+
+        <TextView
+            android:id="@+id/tv_ph2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/tv_ph"
+            android:layout_alignBottom="@+id/tv_ph"
+            android:layout_marginLeft="@dimen/margin_large"
+            android:layout_toRightOf="@+id/tv_ph"
+            android:textColor="#000000"
+            android:textSize="@dimen/text_regular"
+            tools:text="+95459642698" />
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/btn_web"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ph2"
+            android:layout_alignLeft="@+id/btn_timer"
+            android:layout_alignRight="@+id/btn_timer"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:text="Search Web"
+            android:textAllCaps="false" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
