@@ -239,16 +239,33 @@ public class MainActivity extends AppCompatActivity {
                 name = cursor.getString(idx);
 
                 idx = cursor.getColumnIndex(ContactsContract.Contacts.PHOTO_URI);
-                if(cursor.getString(idx) != null){
+                if (cursor.getString(idx) != null) {
 
-                    Uri uri = Uri.parse( cursor.getString(idx));
+                    Uri uri = Uri.parse(cursor.getString(idx));
 
                     imageView.setImageURI(uri);
 
-                }else{
+                } else {
 
                     imageView.setImageDrawable(getDrawable(R.mipmap.ic_launcher));
                 }
+
+                Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                        null,
+                        ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,
+                        null,
+                        null);
+
+                while (phones.moveToNext()) {
+
+                    phone = phones.getString(
+                            phones.getColumnIndex(
+                                    ContactsContract.CommonDataKinds.Phone.NUMBER
+                            )
+                    );
+                }
+
+                phones.close();
 
 
                 Log.d("Data", id + "," + name + ",");
@@ -256,18 +273,6 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
 
             tvName.setText(name);
-
-            Cursor cursor2 = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null
-                    , null, null
-                    , null);
-            if (cursor2.moveToFirst()) {
-
-                phone = cursor2.getString(
-                        cursor2.getColumnIndex(
-                                ContactsContract.CommonDataKinds.Phone.DATA));
-            }
-
-            cursor2.close();
 
             tvPhone.setText(phone);
 
