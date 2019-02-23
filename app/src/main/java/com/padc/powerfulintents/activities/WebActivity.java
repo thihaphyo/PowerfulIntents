@@ -41,7 +41,7 @@ public class WebActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                searchWeb("https://www.youtube.com/PUBGMOBILE");
+                searchWeb("dogs");
 
             }
         });
